@@ -58,7 +58,7 @@ if(!isset($_SESSION["studentID"]))
             if ($result = mysqli_query($con, $sql)) {
                 while ($row = mysqli_fetch_row($result)) {
                     $sameNamePaperExists = true;
-                    echo "<div><a class='clickItem' href='upload/$row[0]' target='_blank'>" . $row[1] . "</a></div>";
+                    echo "<div><a class='clickItem' href='upload/$row[0].pdf' target='_blank'>" . $row[1] . "</a></div>";
                 }
             }
             if ($sameNamePaperExists) {
