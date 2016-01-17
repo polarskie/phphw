@@ -122,8 +122,8 @@ if(!isset($_SESSION["studentID"]))
     ?>
     <?php if(!$sameNamePaperExists) { ?>
         <form action="addPaper.php" method="post" enctype="multipart/form-data">
-            <div><input placeholder="TITLE" type="text" name="title" class="input-blocks" required></div>
-            <div><input placeholder="RESEARCHERS" type="text" class="input-blocks" name="researchers"></div>
+            <div><input placeholder="TITLE" type="text" name="title" required></div>
+            <div><input placeholder="RESEARCHERS" type="text" name="researchers"></div>
             <div><select name="field" id="selectField">
                     <option value ="null">SELECT FIELD</option>
                     <option value ="Date mining">Date Mining</option>
@@ -132,8 +132,8 @@ if(!isset($_SESSION["studentID"]))
                     <option value="Pattern Recognition">Pattern Recognition</option>
                 </select>
             </div>
-            <div><input placeholder="YEAR" type="text" class="input-blocks" name="year"></div>
-            <div><input placeholder="PERIODICAL" type="text" class="input-blocks" name="periodical"></div>
+            <div><input placeholder="YEAR" type="text" name="year"></div>
+            <div><input placeholder="PERIODICAL" type="text" name="periodical"></div>
             <div><input type="file" name="file" required></div>
             <div><input type="submit" value="SUBMIT"></div>
         </form>
