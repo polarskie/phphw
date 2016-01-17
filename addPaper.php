@@ -82,6 +82,7 @@ if(!isset($_SESSION["studentID"]))
                         }
                         move_uploaded_file($_FILES["file"]["tmp_name"],
                             "upload/" . mysqli_insert_id($con) . ".pdf");
+                        $submittedSuccessfully = true;
                     }
                 } else {
                     echo "<script>alert('your file is bigger than 20MB');</script>";
