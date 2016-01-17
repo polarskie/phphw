@@ -52,7 +52,6 @@ if(!isset($_SESSION["studentID"]))
         {
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
         }
-        //echo "1";
         if(!isset($_GET["stillSubmit"])) {
             $sql = "SELECT paperID, title FROM papers WHERE title LIKE '%" . $_POST['title'] . "%';";
             if ($result = mysqli_query($con, $sql)) {
@@ -75,20 +74,14 @@ if(!isset($_SESSION["studentID"]))
             {
                 if ($_FILES["file"]["size"] < 20000000) {
                     if ($_FILES["file"]["error"] > 0) {
-                        //echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
                     } else {
                         $sql = "INSERT INTO papers (title, field, year, periodical, submitor, researchers) VALUES ('" . $_POST['title'] . "', '" . $_POST["field"] . "', '" . $_POST["year"] . "','" . $_POST["periodical"] . "','" . $_SESSION["studentID"] . "','" . $_POST["researchers"] . "');";
                         //echo $sql;
                         if (!mysqli_query($con, $sql)) {
                             echo "failed";
                         }
-//            echo "Upload: " . $_FILES["file"]["name"] . "<br />";
-//            echo "Type: " . $_FILES["file"]["type"] . "<br />";
-//            echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
-//            echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
                         move_uploaded_file($_FILES["file"]["tmp_name"],
                             "upload/" . mysqli_insert_id($con) . ".pdf");
-                        //echo "Stored in: " . "upload/" . mysqli_insert_id($con);
                     }
                 } else {
                     echo "<script>alert('your file is bigger than 20MB');</script>";
@@ -99,23 +92,12 @@ if(!isset($_SESSION["studentID"]))
         {
             if ($_SESSION["fileSize"] < 20000000) {
                 if ($_SESSION["fileError"] > 0) {
-                    //echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
                 } else {
                     $sql = $_SESSION["delayQuery"];
-                    //echo $sql;
                     if (!mysqli_query($con, $sql)) {
                         echo "failed";
                     }
-//            echo "Upload: " . $_FILES["file"]["name"] . "<br />";
-//            echo "Type: " . $_FILES["file"]["type"] . "<br />";
-//            echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
-//            echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
-//                    move_uploaded_file($_SESSION["temp_fileName"],
-//                        "upload/" + mysqli_insert_id($con) + ".pdf");
                     exec("mv upload/" . $_SESSION["temp_fileName"] . " upload/" . mysqli_insert_id($con) . ".pdf");
-                    //echo "mv upload/m_"+$_SESSION["temp_fileName"]+" upload/"+mysqli_insert_id($con)+".pdf";
-                    echo "abcd";
-                    //echo "Stored in: " . "upload/" . mysqli_insert_id($con);
                 }
                 $submittedSuccessfully = true;
             } else {

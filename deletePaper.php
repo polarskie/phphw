@@ -64,14 +64,11 @@ if(!isset($_SESSION["studentID"]))
             }
         }
         $sql = "SELECT paperID, title FROM papers where submitor = " . $_SESSION["studentID"] . " AND valid = 1;";
-        //echo $sql;
         if ($result = mysqli_query($con, $sql)) {
-            // Fetch one and one row
             echo "<ul>";
             while ($row = mysqli_fetch_row($result)) {
                 echo "<li class='clickItem' DATA_paperID='" . $row[0] . "'>" . $row[1] . "</li>";
             }
-            // Free result set
             mysqli_free_result($result);
             echo "</ul>";
         } else {
@@ -83,7 +80,6 @@ if(!isset($_SESSION["studentID"]))
 </div>
 <script>
     $(".clickItem").click(function(e){
-        //alert(e.target.getAttribute("DATA_paperID"));
         if(confirm("Are you sure to delete the paper:\n" + e.target.innerHTML))
         {
             $("#deleteID").val(e.target.getAttribute("DATA_paperID"));
