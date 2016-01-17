@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+<header>
+    <h1>
+        Paper Administrator System
+    </h1>
+</header>
+<div class="index-content">
+<fieldset>
+<legend>User Login</legend>
+<form name="LoginForm" method="post" action="login.php" onSubmit="return InputCheck(this)">
+
+<p><label>StudentID:</label><br/>
+<input type="text" id="studentID" name="studentID" size="30" required/></p>
+<p><label>Password:</label><br/>
+<input type="password" id="password" name="password" size="30" required/></p>
+<button type="submit" name="submit" value="insert">Login</button>
+
+</form>
+<a href="register.html"><button>register</button></a>
+</fieldset>
+</div>
+</body>
+</html>

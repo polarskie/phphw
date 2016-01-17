@@ -1,0 +1,90 @@
+html
+{
+    font-size: 100%;
+}
+
+body
+{
+    background-color: beige;
+    font-size: 1em;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Hiragino Sans GB', 'Microsoft YaHei', '黑体', sans-serif;
+}
+
+header
+{
+    margin-bottom: 100px;
+}
+
+header h1
+{
+    text-align: center;
+}
+
+.menu
+{
+    position: fixed;
+    width: 14em;
+    left: 5em;
+    background-color: aliceblue;
+    border-top: double 3px;
+    border-right: double 5px;
+}
+
+.menu-button:hover
+{
+    cursor: pointer;
+    background-color: cadetblue;
+
+}
+
+.menu-button
+{
+    padding: 0.5em;
+    border-bottom: grey dashed 1px;
+}
+
+.menu-button:last-child
+{
+    border: none;
+}
+
+.menu-button-active
+{
+    background-color: darkcyan;
+    color: cornsilk;
+}
+
+.content
+{
+    position: absolute;
+    left: 23em;
+}
+
+.clickItem:hover
+{
+    color: darkblue;
+    cursor: pointer;
+}
+
+.clickItem
+{
+    font-style: italic;
+    text-decoration: underline;
+    padding: 4px 0;
+}
+
+.warning-text
+{
+    color: red;
+    font-weight: bold;
+}
+
+
+.index-content
+{
+    width: 30em;
+    margin: 0 auto;
+}
