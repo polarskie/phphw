@@ -117,13 +117,14 @@ if(!isset($_SESSION["studentID"]))
         }
     });
     <?php
-    if(!$deleted)
-    {
-        echo "alert('failed in deleting the paper');";
-    }
-    else
-    {
-        echo "alert('succeeded in deleting the paper');";
+    if($_POST["deleteID"]){
+        if(!$deleted)
+        {
+            echo "alert('failed in deleting the paper');";
+        }
+        else {
+            echo "alert('succeeded in deleting the paper');";
+        }
     }?>
 
 </script>
