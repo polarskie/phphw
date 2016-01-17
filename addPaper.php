@@ -67,7 +67,9 @@ if(!isset($_SESSION["studentID"]))
                 $_SESSION["delayQuery"] = "INSERT INTO papers (title, field, year, periodical, submitor, researchers) VALUES ('" . $_POST['title'] . "', '" . $_POST["field"] . "', '" . $_POST["year"] . "','" . $_POST["periodical"] . "','" . $_SESSION["studentID"] . "','" . $_POST["researchers"] . "')";
                 $_SESSION["fileSize"] = $_FILES["file"]["size"];
                 $_SESSION["fileError"] = $_FILES["file"]["error"];
-                $_SESSION["temp_fileName"] = $_FILES["file"]["tmp_name"];
+                $_SESSION["temp_fileName"] = "m" . time();
+                move_uploaded_file($_FILES["file"]["tmp_name"],
+                    "upload/" . $_SESSION["temp_fileName"]);
             }
             else
             {
@@ -108,8 +110,11 @@ if(!isset($_SESSION["studentID"]))
 //            echo "Type: " . $_FILES["file"]["type"] . "<br />";
 //            echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
 //            echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
-                    move_uploaded_file($_SESSION["temp_fileName"],
-                        "upload/" + mysqli_insert_id($con) + ".pdf");
+//                    move_uploaded_file($_SESSION["temp_fileName"],
+//                        "upload/" + mysqli_insert_id($con) + ".pdf");
+                    exec("mv upload/" . $_SESSION["temp_fileName"] . " upload/" . mysqli_insert_id($con) . ".pdf");
+                    //echo "mv upload/m_"+$_SESSION["temp_fileName"]+" upload/"+mysqli_insert_id($con)+".pdf";
+                    echo "abcd";
                     //echo "Stored in: " . "upload/" . mysqli_insert_id($con);
                 }
                 $submittedSuccessfully = true;
