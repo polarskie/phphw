@@ -109,7 +109,7 @@ if(!isset($_SESSION["studentID"]))
 //            echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
 //            echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
                     move_uploaded_file($_SESSION["temp_fileName"],
-                        "upload/" . mysqli_insert_id($con));
+                        "upload/" . mysqli_insert_id($con) . ".pdf");
                     //echo "Stored in: " . "upload/" . mysqli_insert_id($con);
                 }
                 $submittedSuccessfully = true;
