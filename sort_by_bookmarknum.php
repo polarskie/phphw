@@ -136,7 +136,7 @@ $result = mysql_query("SELECT * FROM papers ORDER BY bookmarknum DESC",$link);
 while($row=mysql_fetch_assoc($result))//��result������в�ѯ���ȡ��һ��
 {
  //echo "<tr><td>".$row["paperID"]."</td><td>".$row["field"]."</td><td>".$row["year"]."</td><td>".$row["periodical"]."</td><td>".$row["bookmarknum"]."</td><tr>";
- echo "<a href=\"http://www.baidu.com\" >".$row["title"]."</a>";
+ echo "<a href='upload/".$row["paperID"].".pdf' >".$row["title"]."</a>";
 	$tmp3=$row['paperID'];
 	$rrrrrr=mysql_query("SELECT valid from bookmarks WHERE paperID='$tmp3' AND studentID='".$_SESSION['studentID']."'" );
 	$outans=false;
