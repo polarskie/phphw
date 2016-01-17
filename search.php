@@ -157,7 +157,7 @@ while($row = mysql_fetch_array($result))
 if($row['valid']=="1")
 {
 $tmp2 = $row['title'];
-echo "<li>"."<a href=\"upload"."\\".$tmp2.".pdf\"".">".$tmp2."</a>"."</li>";
+echo "<li>"."<a href='upload/".$row["paperID"].".pdf'>".$tmp2."</a>"."</li>";
   $tmp3=$row['paperID'];
 $rrrrrr=mysql_query("SELECT valid from bookmarks WHERE paperID='$tmp3' AND studentID='".$_SESSION['studentID']."'" );
   $outans=false;

@@ -157,7 +157,7 @@ else
                 if($row2['valid']==1)
                 {
                     $tmp3=$row2['title'];
-                    echo "<li>"."<a href=\"papers"."\\".$tmp3.".pdf\"".">".$tmp3."</a>"."</li>";
+                    echo "<li>"."<a href='upload/".$row["paperID"].".pdf'>".$tmp3."</a>"."</li>";
 
                     echo
                         "<form action=".$_SERVER['PHP_SELF']." method=\"post\" name=\"addbookmark\">
