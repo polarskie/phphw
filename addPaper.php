@@ -124,7 +124,7 @@ if(!isset($_SESSION["studentID"]))
         <form action="addPaper.php" method="post" enctype="multipart/form-data">
             <div><input placeholder="TITLE" type="text" name="title" class="input-blocks" required></div>
             <div><input placeholder="RESEARCHERS" type="text" class="input-blocks" name="researchers"></div>
-            <div><select name="field" class="input-blocks" id="selectField">
+            <div><select name="field" id="selectField">
                     <option value ="null">SELECT FIELD</option>
                     <option value ="Date mining">Date Mining</option>
                     <option value ="Machine learning">Machine Learning</option>
@@ -134,7 +134,7 @@ if(!isset($_SESSION["studentID"]))
             </div>
             <div><input placeholder="YEAR" type="text" class="input-blocks" name="year"></div>
             <div><input placeholder="PERIODICAL" type="text" class="input-blocks" name="periodical"></div>
-            <div><input type="file" class="input-blocks" name="file" required></div>
+            <div><input type="file" name="file" required></div>
             <div><input type="submit" value="SUBMIT"></div>
         </form>
     <?php } ?>
