@@ -88,3 +88,10 @@ header h1
     width: 30em;
     margin: 0 auto;
 }
+
+.input-blocks
+{
+    width: 200px;
+    height: 34px;
+    font-size: 31px;
+}
