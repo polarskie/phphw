@@ -130,7 +130,7 @@ else
 	//�������ݿ�
 	mysql_select_db('paperAdministrater',$link);//ѡ�����ݿ�
 
-	$result = mysql_query("SELECT * FROM WHERE valid= '1' papers ORDER BY year",$link);
+	$result = mysql_query("SELECT * FROM papers WHERE valid= '1' papers ORDER BY year",$link);
 	while($row=mysql_fetch_assoc($result))//��result������в�ѯ���ȡ��һ��
 	{
 		//echo "<tr><td>".$row["paperID"]."</td><td>".$row["field"]."</td><td>".$row["year"]."</td><td>".$row["periodical"]."</td><td>".$row["bookmarknum"]."</td><tr>";
