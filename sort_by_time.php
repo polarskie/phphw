@@ -22,7 +22,7 @@ if(isset($_POST['vd'])){
 			$res=mysql_query("UPDATE bookmarks SET valid = '0'
 	WHERE studentID = '{$name}' AND paperID = '{$papernum}'");
 			if ($res == TRUE) {
-				echo "A record has been delete.";
+
 
 			} else {
 				printf("Could not delete record: %s\n", mysql_error($mysqli));
@@ -70,7 +70,7 @@ if(isset($_POST['vd'])){
 			else
 				echo "record has existed";
 			if ($res === TRUE) {
-				echo "A record has been inserted.";
+
 
 			} else {
 				printf("Could not insert record: %s\n", mysql_error($mysqli));
@@ -130,7 +130,7 @@ else
 	//�������ݿ�
 	mysql_select_db('paperAdministrater',$link);//ѡ�����ݿ�
 
-	$result = mysql_query("SELECT * FROM papers ORDER BY year",$link);
+	$result = mysql_query("SELECT * FROM WHERE valid= '1' papers ORDER BY year",$link);
 	while($row=mysql_fetch_assoc($result))//��result������в�ѯ���ȡ��һ��
 	{
 		//echo "<tr><td>".$row["paperID"]."</td><td>".$row["field"]."</td><td>".$row["year"]."</td><td>".$row["periodical"]."</td><td>".$row["bookmarknum"]."</td><tr>";
