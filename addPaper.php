@@ -53,7 +53,7 @@ if(!isset($_SESSION["studentID"]))
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
         }
         if(!isset($_GET["stillSubmit"])) {
-            $sql = "SELECT paperID, title FROM papers WHERE title LIKE '%" . $_POST['title'] . "%';";
+            $sql = "SELECT paperID, title FROM papers WHERE valid = 1 and title LIKE '%" . $_POST['title'] . "%';";
             if ($result = mysqli_query($con, $sql)) {
                 while ($row = mysqli_fetch_row($result)) {
                     $sameNamePaperExists = true;
